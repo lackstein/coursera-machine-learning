@@ -18,8 +18,9 @@ for iter = 1:num_iters
     %
 
 
-
-
+    h = X * theta;
+    coef = (X' * (h - y)) / m;
+    theta = theta - alpha * coef;
 
 
 
