@@ -26,11 +26,17 @@ sigma = zeros(1, size(X, 2));
 % Hint: You might find the 'mean' and 'std' functions useful.
 %       
 
-
-
-
-
-
+% Returns a column vector containing the mean of each column
+mu = mean(X);
+% Ditto with the standard deviation
+sigma = std(X);
+% Transform the mean to a matrix with the same number of rows as X
+% and then subtract it from X
+diff = X - repmat(mu, size(X,1), 1);
+% Take the inverse of the std deviations (so multiplying results in
+% diff_i / stdev) and diagonalise it so each column is only divided by
+% its own stdev
+X_norm = diff * diag(sigma.^-1);
 
 
 
