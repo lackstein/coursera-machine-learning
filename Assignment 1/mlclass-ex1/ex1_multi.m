@@ -104,7 +104,9 @@ fprintf('\n');
 % ====================== YOUR CODE HERE ======================
 % Recall that the first column of X is all-ones. Thus, it does
 % not need to be normalized.
-price = 0; % You should change this
+X_test = [1650 3];
+X_test_n = (X_test - repmat(mu, size(X_test,1), 1)) * diag(sigma.^-1);
+price = [1 X_test_n] * theta;
 
 
 % ============================================================
