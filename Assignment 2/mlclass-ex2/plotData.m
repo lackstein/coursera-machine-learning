@@ -12,9 +12,8 @@ figure; hold on;
 %               examples and 'ko' for the negative examples.
 %
 
-
-
-
+scatter(X((y==1),1), X((y==1),2), [], 'kd');
+scatter(X((y==0),1), X((y==0),2), [], 'rx');
 
 
 
